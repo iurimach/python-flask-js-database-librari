@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Project-update-delete</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+
+    <!-- აქ იწყება დატაბასეს ლინკები -->
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css">
+    
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='ministyle.css') }}">
+   
+</head>
+
+</head>
+<body>
+  
+        <!--დატა ასედან წამოღებული თებლია ეს თუ მეტი ინფო გინდა მეტი დაწერე-->
+    <table id="example" class="cell-border hover row-border" style="width:100%">
+        <thead class="thead1">
+            <tr>
+                <th >id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Age</th>
+                <th>Action</th>
+                
+            </tr>
+            
+        </thead>
+        <tfoot class="footer1" style="display:table-header-group;" >
+            <tr class="tr1">
+                <th>id</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Age</th>
+                <th>Actions</th>
+            </tr>
+        </tfoot>
+        <tbody>
+            {% for person in persons %}
+            <tr>
+                <td>{{ person['id'] }}</td>
+                <td>{{ person['FirstName'] }}</td>
+                <td>{{ person['LastName'] }}</td>
+                <td>{{ person['age'] }}</td>
+                <td>
+                    <a href="{{ url_for('update', person_id=person['id']) }}" class="btn btn-warning">Update</a>
+                    <a href="{{ url_for('delete', person_id=person['id']) }}" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <button id="toggleButton" class="btn btn-primary">Add</button>
+    <div class="container mt-5">
+           
+        <!--აქ არის დამატების forma ღილაკი zemot მიწერია იდით ნახავ toggleButton მიბული მაქ ეს ფორმა-->
+        <form id="registrationForm" style="display: none;" action="{{ url_for('add') }}" method="post">
+            <h2>დაამატე მონაცემები</h2>
+            <div class="form-group">
+                <label for="firstName">First Name:</label>
+                <input type="text" name="firstName" required></div>
+            <div class="form-group">
+                <label for="lastName">Last Name:</label>
+                <input type="text" name="lastName" required> </div>
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" name="age" required> </div>
+            
+            <input type="submit" value="Add Data" style="background-color: green; color: white;">
+        </form>
+   
+  
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    </body>
+    </html>
+    

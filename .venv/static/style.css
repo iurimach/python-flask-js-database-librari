@@ -1,0 +1,74 @@
+.text1{
+    margin-left: 30%;
+    margin-top: 70px;
+}
+.adddata{
+    background-color: rgb(98, 225, 98);
+    text-decoration: none;
+    color: aliceblue;
+    
+}
+table{
+    width: 98%;
+    margin-left: 10px;
+    margin-top: 40px;
+    border-radius: 2px solid rgb(26, 154, 45);
+    border: 3px solid rgb(26, 154, 45);
+}
+.tr1{
+    margin-left: 10px;
+}
+
+.searchdivwrapper{
+    display: flex;
+    justify-content: space-around;
+}
+.indexh1{
+    margin-left: 40%;
+}
+.update-delete-wrapper{
+    
+    margin-right: 20px;
+}
+.update{
+    margin-right: 5px;
+    background-color: rgb(211, 204, 17);
+    text-decoration: none;
+    color: aliceblue;
+
+}
+.delete{
+    margin-left: 5px;
+    background-color: rgb(211, 17, 17);
+    text-decoration: none;
+    color: aliceblue;
+    
+}
+
+
+/* დაგტაბასეე */
+
+.thead1{
+    background-color: aqua;
+}
+
+#example{
+    background-color: rgb(89, 131, 37);
+}
+.nameth{
+    background-color: azure;
+}
+
+.footer1{
+    background-color: rgb(45, 94, 106);
+}
+/* html Shi naxe ra clasic aq miwvdebi imit da gastilav. mtavria  
+style file gqondes bolos mibmuli vidre bootstrapi */
+.dataTables_wrapper .dataTables_filter input {
+    background-color: rgb(228, 238, 238);
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button{
+   
+    border: 3px solid rgb(119, 219, 132); ;
+}
